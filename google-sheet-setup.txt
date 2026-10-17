@@ -1,0 +1,10 @@
+Save website orders to a Google Sheet (free)
+1. Create a new Google Sheet (use the CLIENT's Google account so they own the data).
+2. Extensions -> Apps Script. Delete the sample code and paste everything from apps-script.gs. Save.
+3. Deploy -> New deployment -> type "Web app".
+   Execute as: Me.  Who has access: Anyone.  Click Deploy and authorise when asked.
+4. Copy the "Web app URL".
+5. Open config.js and paste it: sheetUrl:'https://script.google.com/macros/s/....../exec'
+6. Place a test order on the site. A new tab called "Orders" appears with one row per order.
+If you edit the script later: Deploy -> Manage deployments -> Edit -> New version.
+Note: the site cannot read the sheet's reply, so always do a test order. The sheet is a record only; the owner confirms orders and tables on WhatsApp/phone.

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Café Demo</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<canvas id="c"></canvas>
+<div class="top"><span class="logo" id="lg"></span><div style="display:flex;align-items:center"><span id="pt"></span><div id="dots"></div></div></div>
+<div id="hint">← SWIPE TO EXPLORE →</div>
+<div id="cart" onclick="go(4)">🛒 <span id="cn">0</span> items · ₹<span id="ct">0</span></div>
+<div id="pg">
+<section class="s"><div class="box">
+<div class="hero"><img id="hp" alt="Café photo"><i class="dm" style="left:12%;top:22%;animation-delay:0.0s;width:10px;height:10px"></i><i class="dm" style="left:30%;top:55%;animation-delay:0.6s;width:14px;height:14px"></i><i class="dm" style="left:52%;top:18%;animation-delay:1.1s;width:9px;height:9px"></i><i class="dm" style="left:68%;top:40%;animation-delay:0.3s;width:16px;height:16px"></i><i class="dm" style="left:80%;top:12%;animation-delay:1.6s;width:12px;height:12px"></i><i class="dm" style="left:90%;top:60%;animation-delay:0.9s;width:10px;height:10px"></i><i class="dm" style="left:44%;top:75%;animation-delay:1.9s;width:8px;height:8px"></i></div>
+<div class="tag" id="tg"></div>
+<h1 id="h1"></h1>
+<p id="ab"></p>
+<div class="stats"><div><b id="s1"></b><span id="s1l"></span></div><div><b id="s2"></b><span>per person</span></div><div><b id="s3"></b><span>closing time</span></div></div>
+<a class="btn" onclick="go(1)">View menu</a><a class="btn o" onclick="go(4)">Order / reserve</a><p style="font-size:13px">Swipe left to explore the menu, gallery, reviews and ordering.</p>
+</div></section>
+<section class="s"><div class="box" style="margin-left:auto">
+<div class="tag">3D menu</div>
+<div id="nm"></div><div id="pr"></div><p id="ds"></p><span class="an" id="an"></span><br><button class="btn" id="add">+ Add to order</button>
+<div class="chips" id="chips"></div><div id="list"></div>
+</div></section>
+<section class="s gl"><div><div class="tag">Food gallery</div><h2>Taste it with your eyes</h2></div>
+<div><div id="gc"></div><button class="btn" onclick="gd.style.display='block'">View all photos</button></div></section>
+<section class="s"><div class="wide">
+<div class="tag">Google reviews</div>
+<div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><div class="big" id="rb"></div><div><div class="st" style="font-size:22px">★★★★★</div><p style="margin:0" id="rn"></p></div></div>
+<p>Guests mention most:</p><div id="rp"></div>
+<div class="grid" id="rv"></div>
+</div></section>
+<section class="s"><div class="wide" style="max-width:560px">
+<div class="tag">Order &amp; reserve</div><h2>Your order</h2>
+<div id="ci"></div>
+<div style="display:flex;justify-content:space-between;font-size:18px;margin:10px 0"><span>Total</span><b id="tt" style="color:var(--red)">₹0</b></div>
+<div class="chips" id="ty"><button class="chip on" data-t="Delivery">Home delivery</button><button class="chip" data-t="Takeaway">Takeaway</button><button class="chip" data-t="Dine-in">Reserve a table</button></div>
+<div class="f"><input id="fn" placeholder="Your name"><input id="fp" placeholder="Phone number" inputmode="tel"></div>
+<input id="fa" placeholder="Delivery address">
+<div class="f" id="fd" style="display:none"><input id="fdt" type="date"><input id="ftm" type="time"><input id="fg" type="number" min="1" placeholder="Guests"></div>
+<input id="fnote" placeholder="Notes (optional)">
+<p id="om" style="color:var(--red);font-size:13px"></p>
+<button class="btn" onclick="send()">Send order on WhatsApp</button><button class="btn o" onclick="copyO()">Copy order</button>
+<p style="font-size:12px">Reserve a table and pre-order your dishes, so your food is ready when you arrive. Payment is made at the café or on delivery.</p>
+</div></section>
+<section class="s rt"><div class="box">
+<img id="sf" alt="Café">
+<div class="tag">Visit us</div>
+<h2>Come hungry</h2>
+<p id="ad"></p>
+<p id="hr"></p>
+<iframe id="mp" title="Map" loading="lazy" style="width:100%;height:190px;border:0;border-radius:12px;margin-top:12px"></iframe><br><a class="btn" id="dr" target="_blank" rel="noopener">Get directions</a>
+<a class="btn o" onclick="go(4)">Order / reserve</a>
+</div></section>
+<section class="s"><div class="wide">
+<div class="tag">Demo · What's included</div><h2>Everything your café needs</h2>
+<p>This is a live demo. Brand, menu, photos, colours and contact details are all customisable.</p>
+<div class="grid">
+<div class="card"><span class="st">↔ Swipe navigation</span><p>Swipe left / right between pages, just like a mobile app.</p></div>
+<div class="card"><span class="st">◆ 3D animated menu</span><p>A different animated 3D model for pizza, pasta, fries, sandwiches, tacos, drinks and desserts.</p></div>
+<div class="card"><span class="st">🛒 Online ordering</span><p>Cart with delivery or takeaway. Orders arrive on WhatsApp and can also be saved to a Google Sheet.</p></div>
+<div class="card"><span class="st">🍽 Table reservation</span><p>Guests pick date, time and guests, and can pre-order dishes.</p></div>
+<div class="card"><span class="st">📍 Location &amp; map</span><p>Live Google Map, directions, timings and contact.</p></div>
+<div class="card"><span class="st">★ Gallery &amp; reviews</span><p>3D photo carousel, full photo grid and guest reviews.</p></div>
+</div>
+<p style="font-size:13px">Customise everything in one file: <b style="color:#fff">config.js</b>.</p>
+</div></section>
+</div>
+<div id="demo">DEMO PREVIEW</div>
+<div id="gd" onclick="this.style.display='none'"><div style="position:fixed;top:18px;right:5vw;color:var(--sil);font-size:14px">✕ Close</div><div id="gr"></div></div>
+
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="images.js"></script>
+<script src="app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="scene.js"></script>
+</body></html>
